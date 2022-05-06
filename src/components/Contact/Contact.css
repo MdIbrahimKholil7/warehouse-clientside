@@ -1,0 +1,31 @@
+.contact-container{
+    background: linear-gradient(135deg, #340262 0%, #012a2e 100%);
+    padding-bottom: 10rem;
+    margin-top: 10rem;
+    
+}
+.shape{
+    width: 100%;
+    height: 3rem;
+    background-image: url(../../img/shape.png);
+    background-size: cover;
+
+}
+.contact-form{
+    min-height: 85vh !important;
+}
+/* .shape-img{
+    animation: move_wave_reverse 10s linear infinite
+}
+@keyframes move_wave_reverse {
+    0% {
+        transform: translateX(0%) translateZ(0);
+    }
+    50% {
+        transform: translateX(50%) translateZ(20%);
+    }
+    100% {
+        transform: translateX(80%) translateZ(0);
+    }
+} */
+

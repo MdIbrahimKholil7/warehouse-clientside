@@ -1,0 +1,20 @@
+.left-div,.right-div{
+    height: .2rem;
+    background: #1b0b5dde;
+    width: 100%;
+}
+.fb-icon{
+    height: 3rem;
+}
+.icon-btn{
+    border: none;
+    width: 70%;
+    padding: 1rem 2rem;
+    text-align: center;
+    color: #fff;
+    font-size: 1.7rem;
+    background: #1b0b5dde;
+    margin: auto;
+    display: block;
+    border-radius: .5rem;
+}

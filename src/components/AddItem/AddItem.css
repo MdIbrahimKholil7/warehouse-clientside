@@ -1,0 +1,7 @@
+.product-input{
+    padding: 1.8rem .8rem;
+    font-size: 1.6rem !important;
+}
+.product-input::placeholder{
+    font-size: 1.8rem ;
+}

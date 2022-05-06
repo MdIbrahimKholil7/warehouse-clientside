@@ -1,0 +1,96 @@
+.allProduct {
+    background: rgba(21, 18, 41, 0.866);
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 15rem;
+}
+
+.table-img {
+    width: 5rem;
+    object-fit: cover;
+}
+.spinner{
+    height: 90vh;
+    background: rgb(167, 161, 161);
+   
+}
+/* table {
+    border-collapse: collapse;
+    display: inline-block;
+} */
+
+thead th,
+tr,td {
+    border: .1rem solid rgb(99, 99, 106);
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+}
+
+thead th {
+    background-color: rgb(2, 2, 46);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #030e38;
+    
+}
+
+.add {
+    background: rgba(41, 1, 121, 0.911);
+    border: 0;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+}
+
+.delete {
+    background: rgb(192, 3, 3);
+    border: 0;
+    padding: 1rem 2rem;
+    color: #fff;
+    font-size: 1.6rem;
+    border-radius: .5rem;
+}
+.paginateContainer{
+    display: flex;
+    justify-content: end;
+    margin-top: 5rem;
+    
+}
+.page-btn{
+    padding: 1rem;
+    margin: 0 1rem;
+}
+.previous{
+    color: #fff;
+    background-color: rgb(9, 177, 244);
+    padding: 1rem 1.6rem;
+    border-radius: .5rem;
+}
+.active-btn{
+    background: rgb(9, 177, 244);
+    color: #fff;
+    border-radius: .3rem;
+    /* padding: 1rem; */
+}
+.link-btn{
+    text-decoration: none;
+    color: #fff;
+}
+@media screen and (max-width:786px) {
+    table{
+        width: 80%;
+    }
+    .table-header{
+        display: none;
+    }
+}
+@media screen and (max-width:416px) {
+    table{
+        width: 70%;
+    }
+    .table-header{
+        display: none;
+    }
+}
