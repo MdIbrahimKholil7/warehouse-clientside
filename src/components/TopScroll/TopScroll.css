@@ -1,0 +1,11 @@
+.scroll-btn{
+    position: fixed;
+    bottom: 2rem ;
+    right: 2.4rem;
+    z-index: 999;
+    padding: 1rem;
+    background: rgba(245, 245, 249, 0.975);
+    border: none;
+    color: #000;
+    font-size: 1.7rem;
+}

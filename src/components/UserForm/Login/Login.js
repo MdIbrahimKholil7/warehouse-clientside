@@ -1,6 +1,6 @@
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
-import { useAuthState, useSendEmailVerification, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Social from '../../Shared/Social/Social';
 import auth from '../../_firebase.init';
@@ -57,7 +57,6 @@ const Login = () => {
             setUserInfo({ ...userInfo, email })
         }
     }
-
 
     // get password 
     const handlePassword = event => {
