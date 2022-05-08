@@ -14,11 +14,13 @@ import RequireAuth from './components/RequireAuth/RequireAuth';
 import VerifyEmail from './components/VerfiyEmail/VerifyEmail';
 import MyItems from './components/MyItems/MyItems';
 import Blog from './components/Blog/Blog';
+import TopScroll from './components/TopScroll/TopScroll';
 
 function App() {
   return (
     <div className="App">
       <Header/>
+      <TopScroll/>
      <Routes>
        <Route path='/' element={<Home/>}/>
        <Route path='/blog' element={<Blog/>}/>
