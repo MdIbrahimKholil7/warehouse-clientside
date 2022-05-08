@@ -15,6 +15,7 @@ import VerifyEmail from './components/VerfiyEmail/VerifyEmail';
 import MyItems from './components/MyItems/MyItems';
 import Blog from './components/Blog/Blog';
 import TopScroll from './components/TopScroll/TopScroll';
+import About from './components/About/About';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
       <TopScroll/>
      <Routes>
        <Route path='/' element={<Home/>}/>
+       <Route path='/about' element={<About/>}/>
        <Route path='/blog' element={<Blog/>}/>
        <Route path='/productDetails/:id' element={<RequireAuth><ProductDetails/></RequireAuth>}/>
        <Route path='/mangeItems' element={
