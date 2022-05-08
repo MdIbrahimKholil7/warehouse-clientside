@@ -8,8 +8,8 @@ import { Fade } from 'react-reveal';
 
 const Banner = () => {
     return (
-        <div className='banner'>
-            <Carousel fade>
+        <div className='banner carouselDiv'>
+            <Carousel controls={false} fade>
                 <Carousel.Item className='h-100 img-banner'>
                     <div className="banner-container">
                         <img
