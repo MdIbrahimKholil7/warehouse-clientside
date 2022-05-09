@@ -15,7 +15,6 @@ const Header = () => {
         { name: 'Home', path: '/', id: 1 },
         { name: 'About', path: '/about', id: 2 },
         { name: 'Blog', path: '/blog', id: 3 },
-
     ]
     const login = [
         { name: 'Login', path: '/login', id: 4 },

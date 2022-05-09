@@ -5,14 +5,14 @@
 html {
   /* this makes sure the padding and the border is included in the box sizing */
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   font-size: 62.5%;
 }
 
 html body {
   padding: 0;
   margin: 0;
-  overflow-x: inherit;
+  /* overflow-x: inherit; */
 }
 @media screen and (max-width:768px){
   html{
