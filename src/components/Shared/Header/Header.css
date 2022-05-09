@@ -5,7 +5,8 @@
 
 .sticky-nav{
     transition: .3s all;
-   
+   position: sticky;
+   top: 0;
 }
 .social-header{
     border-bottom: .2rem solid white;
