@@ -1,9 +1,9 @@
 import React from 'react';
 import PageTitle from '../Shared/PageTitle/PageTitle';
-
+import './Blog.css'
 const Blog = () => {
     return (
-        <div className='mt-5 pt-5'>
+        <div className='mt-5 pt-5 blog'>
             <PageTitle title='Blog'/>
             <div className='container'>
                 <div className='w-75 mx-auto border px-4 pb-4 rounded mb-4'>

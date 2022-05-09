@@ -5,6 +5,7 @@
 
 .sticky-nav{
     transition: .3s all;
+   
 }
 .social-header{
     border-bottom: .2rem solid white;
@@ -23,7 +24,7 @@
 .logo{
     width: 12rem;
 }
-.navbar{
+.navbars{
     height: 8rem;
     width: 100%;
     display: flex;
@@ -68,9 +69,9 @@ ul li{
     .menu{
         display: block;
         position: absolute;
-        top: 8rem;
+        top: 9.9rem;
         width: 35rem;
-        left:0;
+        right:0;
         text-align: center;
         background: #0b0728;
         height: calc(100vh - 8rem);
