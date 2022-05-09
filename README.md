@@ -13,4 +13,6 @@
 - react js
 - firebase 
 - heroku 
+- node js
+- express js
 - store data in the mongodb
