@@ -26,11 +26,13 @@ const ProductDetails = () => {
     const inputValue=event=>{
         const inputVal=event.target.value
         setValue(Number(inputVal))
+        
     }
     const addQuantity =async event => {
         if(!value){
             return 
         }
+        document.getElementById('input-quantity').value=''
         await axios.put(`https://tranquil-falls-56090.herokuapp.com/service/${id}`, {quantity:value+quantity})
         .then(data=>{
             setReload(!reload)
@@ -61,7 +63,7 @@ const ProductDetails = () => {
                         <p className='fs-3'><strong>Supplier</strong>:{Supplier}</p>
                         <p className='fs-3'><strong>Price</strong>:${price}</p>
                         <p className='fs-4'><strong>Quantity</strong>:{quantity}</p>
-                        <input onChange={inputValue} className='quantity-input' type="number" name='quantity' placeholder='Restock product' />
+                        <input id='input-quantity' onChange={inputValue} className='quantity-input' type="number" name='quantity' placeholder='Restock product' />
                         <button onClick={addQuantity} className='add-btn'>Add</button>
                         <button onClick={removeQuantity } className='add-btn'>Delivered</button>
                         <h3 className='mt-5 pt-4'>Manage Your Product click on manage inventory</h3>

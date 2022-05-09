@@ -27,7 +27,6 @@ const Login = () => {
     const navigate = useNavigate()
     const from = location?.state?.from?.pathname || '/'
     const [signInWithEmailAndPassword, loginUser, loading, loginError] = useSignInWithEmailAndPassword(auth)
-    console.log(token)
     useEffect(() => {
         if (loginError) {
             switch (loginError?.code) {
@@ -58,7 +57,6 @@ const Login = () => {
             setUserInfo({ ...userInfo, email })
         }
     }
-    console.log(user)
     // get password 
     const handlePassword = event => {
         const password = event.target.value
