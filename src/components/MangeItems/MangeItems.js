@@ -14,7 +14,7 @@ const MangeItems = () => {
     const [user] = useAuthState(auth)
     const [services, setService] = useState([])
     const [reload, setReload] = useState(false)
-    const [spinner, setSpinner] = useState(true)
+    const [spinner, setSpinner] = useState(false)
     const [count, setCount] = useState(0)
     const [page, setPage] = useState(0)
     const [size, setSize] = useState(5)
@@ -32,6 +32,7 @@ const MangeItems = () => {
             try {
                 const { data } = await axiosPrivate.get(url)
                 setService(data)
+                setSpinner(false)
             } catch (error) {
                 if (error?.response.status === 401 || error?.response.status === 403) {
                     navigateLogin('/login')
@@ -65,7 +66,7 @@ const MangeItems = () => {
         <div className='allProduct'>
             <PageTitle title='ManageItems' />
             {
-                spinner ? <Spinner /> : <div></div>
+                spinner && <Spinner />
             }
             <h1 className='text-center pt-5 text-white'>{services?.message && services.message}</h1>
             {
@@ -119,26 +120,28 @@ const MangeItems = () => {
                                 }
                             </tbody>
                         </table>
-                        <div>
-                            <ReactPaginate
-                                previousLabel={'Prev'}
-                                nextLabel={'Next'}
-                                breakLabel={'...'}
-                                pageCount={count}
-                                marginPagesDisplayed={3}
-                                pageRangeDisplayed={3}
-                                onPageChange={handlePageClick}
-                                containerClassName={'paginateContainer'}
-                                pageClassName={'page-btn'}
-                                previousClassName={'previous'}
-                                previousLinkClassName={'link-btn'}
-                                pageLinkClassName={'link-btn'}
-                                nextClassName={'previous'}
-                                breakClassName={'page-btn'}
-                                breakLinkClassName={'link-btn'}
-                                nextLinkClassName={'link-btn'}
-                                activeClassName={'active-btn'}
-                            />
+                        <div className='d-flex justify-content-end'>
+                            <div className='w-75 d-flex justify-content-end bg-primary'>
+                                <ReactPaginate
+                                    previousLabel={'Prev'}
+                                    nextLabel={'Next'}
+                                    breakLabel={'...'}
+                                    pageCount={count}
+                                    marginPagesDisplayed={1}
+                                    pageRangeDisplayed={2}
+                                    onPageChange={handlePageClick}
+                                    containerClassName={'paginateContainer'}
+                                    pageClassName={'page-btn'}
+                                    previousClassName={'previous'}
+                                    previousLinkClassName={'link-btn'}
+                                    pageLinkClassName={'link-btn'}
+                                    nextClassName={'previous'}
+                                    breakClassName={'page-btn'}
+                                    breakLinkClassName={'link-btn'}
+                                    nextLinkClassName={'link-btn'}
+                                    activeClassName={'active-btn'}
+                                />
+                            </div>
                         </div>
                     </div>
                 </>

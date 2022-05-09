@@ -20,9 +20,9 @@ const MyItems = () => {
     const [count, setCount] = useState(0)
     const [page, setPage] = useState(0)
     const [size, setSize] = useState(5)
-    const [spinner,setSpinner]=useState(false)
+    const [spinner, setSpinner] = useState(false)
     useEffect(() => {
-        
+
         (async () => {
             setSpinner(true)
             const url = `https://tranquil-falls-56090.herokuapp.com/myItems?email=${user?.email}&page=${page}&size=${size}`
@@ -61,7 +61,7 @@ const MyItems = () => {
         <div className='allProduct'>
             <PageTitle title='MyItems' />
             {
-                spinner && <Spinner/>
+                spinner && <Spinner />
             }
             {
                 product.length && (
@@ -111,26 +111,28 @@ const MyItems = () => {
                                 }
                             </tbody>
                         </table>
-                        <div>
-                            <ReactPaginate
-                                previousLabel={'Prev'}
-                                nextLabel={'Next'}
-                                breakLabel={'...'}
-                                pageCount={count}
-                                marginPagesDisplayed={3}
-                                pageRangeDisplayed={3}
-                                onPageChange={handlePageClick}
-                                containerClassName={'paginateContainer'}
-                                pageClassName={'page-btn'}
-                                previousClassName={'previous'}
-                                previousLinkClassName={'link-btn'}
-                                pageLinkClassName={'link-btn'}
-                                nextClassName={'previous'}
-                                breakClassName={'page-btn'}
-                                breakLinkClassName={'link-btn'}
-                                nextLinkClassName={'link-btn'}
-                                activeClassName={'active-btn'}
-                            />
+                        <div className='d-flex justify-content-end'>
+                            <div className='w-75 d-flex justify-content-end'>
+                                <ReactPaginate
+                                    previousLabel={'Prev'}
+                                    nextLabel={'Next'}
+                                    breakLabel={'...'}
+                                    pageCount={count}
+                                    marginPagesDisplayed={1}
+                                    pageRangeDisplayed={2}
+                                    onPageChange={handlePageClick}
+                                    containerClassName={'paginateContainer'}
+                                    pageClassName={'page-btn'}
+                                    previousClassName={'previous'}
+                                    previousLinkClassName={'link-btn'}
+                                    pageLinkClassName={'link-btn'}
+                                    nextClassName={'previous'}
+                                    breakClassName={'page-btn'}
+                                    breakLinkClassName={'link-btn'}
+                                    nextLinkClassName={'link-btn'}
+                                    activeClassName={'active-btn'}
+                                />
+                            </div>
                         </div>
                     </div>
 
