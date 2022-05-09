@@ -7,6 +7,7 @@ import ReactPaginate from 'react-paginate';
 import { useNavigate } from 'react-router-dom';
 import axiosPrivate from '../api/axiosPrivate';
 import PageTitle from '../Shared/PageTitle/PageTitle';
+import Spinner from '../Spinner/Spinner';
 import auth from '../_firebase.init';
 
 const MyItems = () => {
@@ -19,14 +20,17 @@ const MyItems = () => {
     const [count, setCount] = useState(0)
     const [page, setPage] = useState(0)
     const [size, setSize] = useState(5)
+    const [spinner,setSpinner]=useState(false)
     useEffect(() => {
-
+        
         (async () => {
+            setSpinner(true)
             const url = `https://tranquil-falls-56090.herokuapp.com/myItems?email=${user?.email}&page=${page}&size=${size}`
             try {
                 const { data } = await axios.get(url)
                 console.log(data)
                 setProduct(data)
+                setSpinner(false)
             } catch (error) {
                 console.log(error)
             }
@@ -56,7 +60,9 @@ const MyItems = () => {
     return (
         <div className='allProduct'>
             <PageTitle title='MyItems' />
-           
+            {
+                spinner && <Spinner/>
+            }
             {
                 product.length && (
                     <div className='container text-white'>

@@ -32,9 +32,9 @@ const AddItem = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <PageTitle title='AddItems'/>
-            <div className='w-50 mx-auto'>
+            <div className='w-50 sm-w-100 sm mx-auto'>
                 <h1 className='text-center py-5 my-5 fw-bold'>Add New Service</h1>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
