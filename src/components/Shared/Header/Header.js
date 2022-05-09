@@ -8,6 +8,7 @@ import auth from '../../_firebase.init';
 import { MenuIcon, XIcon } from '@heroicons/react/solid';
 import EmailBox from './EmailBox/EmailBox';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 const Header = () => {
     const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false)
@@ -36,7 +37,7 @@ const Header = () => {
                                 <div className='w-100 h-100 '>
                                     <div className="navbars">
                                         <div>
-                                            <img className='logo' src={logo} alt="" />
+                                           <Link to='/'> <img className='logo' src={logo} alt="" /></Link>
                                         </div>
                                         <nav>
                                             <ul className={`menu  ${open ? 'menu' : 'close-menu'}`}>
