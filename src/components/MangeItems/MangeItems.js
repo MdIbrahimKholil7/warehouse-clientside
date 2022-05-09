@@ -28,7 +28,7 @@ const MangeItems = () => {
 
         (async () => {
             setSpinner(true)
-            const url = `http://localhost:5000/services?page=${page}&count=${size}&email=${user?.email}`
+            const url = `https://tranquil-falls-56090.herokuapp.com/services?page=${page}&count=${size}&email=${user?.email}`
             try {
                 const { data } = await axiosPrivate.get(url)
                 setService(data)
@@ -41,9 +41,8 @@ const MangeItems = () => {
         })()
     }, [reload, page, count, size, user])
     // load all data length 
-    console.log(services)
     useEffect(() => {
-        axios.get('http://localhost:5000/serviceCount')
+        axios.get('https://tranquil-falls-56090.herokuapp.com/serviceCount')
             .then(res => {
                 const length = Number(Math.ceil(res.data.result / size))
                 setCount(length)

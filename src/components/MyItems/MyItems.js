@@ -22,7 +22,7 @@ const MyItems = () => {
     useEffect(() => {
 
         (async () => {
-            const url = `http://localhost:5000/myItems?email=${user?.email}&page=${page}&size=${size}`
+            const url = `https://tranquil-falls-56090.herokuapp.com/myItems?email=${user?.email}&page=${page}&size=${size}`
             try {
                 const { data } = await axios.get(url)
                 console.log(data)
@@ -36,7 +36,7 @@ const MyItems = () => {
     // count api 
     useEffect(() => {
         (async () => {
-            const { data } = await axios.get(`http://localhost:5000/myItemsCount?email=${user.email}`)
+            const { data } = await axios.get(`https://tranquil-falls-56090.herokuapp.com/myItemsCount?email=${user.email}`)
             const length = Math.ceil(data.result / 5)
             setCount(length)
         })()

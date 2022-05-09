@@ -25,13 +25,12 @@ const Header = () => {
         { name: 'My Items', path: '/myItems', id: 2 },
         { name: 'Add Items', path: '/addItem', id: 3 },
     ]
-   
     return (
        <>
          <EmailBox/>
          <div className='sticky-top sticky-nav'>
             <div className='header text-white relative'>
-                <div className='container'>
+                <div className='container static'>
                     <div className=' py-3 w-100'>
                         <div className='w-100 h-100 '>
                             <div className="navbar">

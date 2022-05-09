@@ -9,9 +9,11 @@ import Social from '../../Shared/Social/Social';
 import auth from '../../_firebase.init';
 import './Register.css'
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import useToken from '../../../hooks/useToken';
 const Register = () => {
     const [open, setOpen] = useState(true)
     const [user] = useAuthState(auth)
+    const [token]=useToken(user)
     const navigate = useNavigate()
     const location = useLocation()
     const from = location?.state?.from?.pathname || '/'
@@ -50,7 +52,7 @@ const Register = () => {
     }, [firebaseError])
     console.log(firebaseError)
     console.log(error)
-    if (user) {
+    if (token) {
         navigate(from, { replace: true })
     }
     // get email 

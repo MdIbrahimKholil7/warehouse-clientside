@@ -1,6 +1,8 @@
 .header{
     background-color: #080232e8;
+    position: relative;
 }
+
 .sticky-nav{
     transition: .3s all;
 }
@@ -36,7 +38,7 @@ ul li{
     font-size: 1.7rem;
     margin-left: 2rem;
     color: #fff;
-    position: relative;
+    /* position: relative; */
 }
 .li::before{
     content: '';
@@ -68,12 +70,13 @@ ul li{
         position: absolute;
         top: 8rem;
         width: 35rem;
-        right: -1rem;
+        left:0;
         text-align: center;
         background: #0b0728;
         height: calc(100vh - 8rem);
         transition: .3s all;
         z-index: 999;
+        padding: 0;
     }
     .menu li{
         margin: 2rem 0;

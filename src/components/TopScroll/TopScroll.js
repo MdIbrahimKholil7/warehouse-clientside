@@ -12,6 +12,7 @@ const TopScroll = () => {
         })
     }, [])
 
+    // scroll btn function controller 
     const scrollBtn = () => {
         window.scrollTo({
             top: '8rem',
