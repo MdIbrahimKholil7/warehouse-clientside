@@ -55,7 +55,7 @@ const Login = () => {
             setUserInfo({ ...userInfo, email })
         }
     }
-
+    console.log(user)
     // get password 
     const handlePassword = event => {
         const password = event.target.value
@@ -86,7 +86,8 @@ const Login = () => {
         }
         if (userInfo.email && userInfo.password) {
             await signInWithEmailAndPassword(userInfo.email, userInfo.password)
-            localStorage.setItem('accessToken',token)
+            console.log(token)
+            localStorage.setItem('accessToken',(token))
             navigate(from, { replace: true })
         }
         event.target.reset()

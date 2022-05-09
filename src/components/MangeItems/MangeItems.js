@@ -41,6 +41,7 @@ const MangeItems = () => {
         })()
     }, [reload, page, count, size, user])
     // load all data length 
+    console.log(services)
     useEffect(() => {
         axios.get('http://localhost:5000/serviceCount')
             .then(res => {
@@ -67,6 +68,7 @@ const MangeItems = () => {
             {
                 spinner ? <Spinner /> : <div></div>
             }
+            <h1 className='text-center pt-5 text-white'>{services?.message && services.message}</h1>
             {
                 services.length && <>
                     <h1 className='text-center text-white text-uppercase fw-bold py-5'>All Products</h1>
