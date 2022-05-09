@@ -58,7 +58,7 @@ const MyItems = () => {
     }
 
     return (
-        <div className='allProduct'>
+        <div className='allProduct pt-5'>
             <PageTitle title='MyItems' />
             {
                 spinner && <Spinner />
