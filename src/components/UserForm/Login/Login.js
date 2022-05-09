@@ -8,11 +8,12 @@ import './Login.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer, toast } from 'react-toastify';
 import { sendPasswordResetEmail } from 'firebase/auth';
-import axios from 'axios';
 import PageTitle from '../../Shared/PageTitle/PageTitle';
+import useToken from '../../../hooks/useToken';
 const Login = () => {
     const [open, setOpen] = useState(true)
     const [user] = useAuthState(auth)
+    const [token]=useToken(user)
     const [error, setError] = useState({
         emailError: '',
         passwordError: '',
@@ -26,7 +27,7 @@ const Login = () => {
     const navigate = useNavigate()
     const from = location?.state?.from?.pathname || '/'
     const [signInWithEmailAndPassword, loginUser, loading, loginError] = useSignInWithEmailAndPassword(auth)
-    // const [sendPasswordResetEmail, sending, errors]=useSendEmailVerification(auth)
+    console.log(token)
     useEffect(() => {
         if (loginError) {
             switch (loginError?.code) {
@@ -42,9 +43,6 @@ const Login = () => {
         }
     }, [loginError])
 
-   /*  if (user) {
-        navigate(from, { replace: true })
-    } */
     // get email 
     const handleEmail = event => {
         const email = event.target.value
@@ -87,12 +85,9 @@ const Login = () => {
             console.log(error)
         }
         if (userInfo.email && userInfo.password) {
-            const email=userInfo.email
             await signInWithEmailAndPassword(userInfo.email, userInfo.password)
-            const {data}=await axios.post('http://localhost:5000/login',{email})
+            localStorage.setItem('accessToken',token)
             navigate(from, { replace: true })
-            localStorage.setItem('accessToken',(data.accessToken))
-            console.log(data)
         }
         event.target.reset()
     }

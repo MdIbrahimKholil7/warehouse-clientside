@@ -4,7 +4,6 @@ const TopScroll = () => {
     const [top, setTop] = useState(false)
     useEffect(() => {
         window.addEventListener('scroll', () => {
-            console.log(window.scrollY)
             if (window.scrollY > 400) {
                 setTop(true)
             } else {
