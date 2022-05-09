@@ -2,17 +2,24 @@ import React from 'react';
 import './Social.css'
 import google from '../../../img/google.png'
 import facebook from '../../../img/facebook.png'
-import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useAuthState, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../_firebase.init';
+import useToken from '../../../hooks/useToken';
+import { useLocation, useNavigate } from 'react-router-dom';
 const Social = () => {
-    const [signInWithGoogle,user,loading,error]=useSignInWithGoogle(auth)
-    const handleGoogle=()=>{
-        signInWithGoogle()
-        .then(res=>{
-            console.log('Google login successful')
-        }).catch(error=>{
-            console.log(error)
-        })
+    const [user] = useAuthState(auth)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const from = location?.state?.from?.pathname || '/'
+    const [token] = useToken(user)
+    const [signInWithGoogle, users, loading, error] = useSignInWithGoogle(auth)
+    if (token) {
+        navigate(from, { replace: true })
+    }
+    console.log(token)
+    console.log(user)
+    const handleGoogle = async () => {
+        await signInWithGoogle()
     }
 
     return (

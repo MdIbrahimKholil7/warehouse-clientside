@@ -16,6 +16,7 @@ import MyItems from './components/MyItems/MyItems';
 import Blog from './components/Blog/Blog';
 import TopScroll from './components/TopScroll/TopScroll';
 import About from './components/About/About';
+import NotFound from './components/Shared/NotFound/NotFound';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
        <Route path='/login' element={<Login/>}/>
        <Route path='/verfiyEmail' element={<VerifyEmail/>}/>
        <Route path='/myItems' element={<RequireAuth><MyItems/></RequireAuth>}/>
+       <Route path='*' element={<NotFound/>}/>
      </Routes>
      <Footer/>
 

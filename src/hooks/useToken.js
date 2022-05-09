@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
 const useToken = (user) => {
+    console.log(user)
     const [token,setToken]=useState('')
     const email=user?.email
     console.log(email)
@@ -9,6 +10,7 @@ const useToken = (user) => {
         (async()=>{
           if(email){
             const {data}=await axios.post('http://localhost:5000/login',{email})
+            localStorage.setItem('accessToken',data.accessToken)
             setToken(data.accessToken)
           }
         })()

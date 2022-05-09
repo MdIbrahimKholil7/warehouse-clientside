@@ -43,6 +43,9 @@ const Login = () => {
         }
     }, [loginError])
 
+    if(token){
+        navigate(from, { replace: true })
+    }
     // get email 
     const handleEmail = event => {
         const email = event.target.value
@@ -86,9 +89,7 @@ const Login = () => {
         }
         if (userInfo.email && userInfo.password) {
             await signInWithEmailAndPassword(userInfo.email, userInfo.password)
-            console.log(token)
-            localStorage.setItem('accessToken',(token))
-            navigate(from, { replace: true })
+            
         }
         event.target.reset()
     }
