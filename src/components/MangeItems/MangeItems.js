@@ -121,7 +121,7 @@ const MangeItems = () => {
                             </tbody>
                         </table>
                         <div className='d-flex justify-content-end'>
-                            <div className='w-75 d-flex justify-content-end bg-primary'>
+                            <div className='w-75 d-flex justify-content-end'>
                                 <ReactPaginate
                                     previousLabel={'Prev'}
                                     nextLabel={'Next'}
