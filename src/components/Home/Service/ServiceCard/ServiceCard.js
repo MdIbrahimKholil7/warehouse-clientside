@@ -5,7 +5,7 @@ const ServiceCard = ({ service }) => {
     const { servicenName, quantity, price, Supplier, img, desc, _id } = service
     const navigate = useNavigate()
     return (
-        <div className='col col-md-6 col-lg-4 col-xl-4 col-12 ' >
+        <div className='col col-md-6 col-lg-4 col-xl-4 col-12 height' >
             <div className='cards'>
                 <div className='img'>
                     <img className='img-fluid' src={img} alt={servicenName} />
