@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const [user] = useAuthState(auth)
     const [open, setOpen] = useState(false)
+    // menu bar 
     const menu = [
         { name: 'Home', path: '/', id: 1 },
         { name: 'About', path: '/about', id: 2 },

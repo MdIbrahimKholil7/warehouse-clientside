@@ -1,5 +1,4 @@
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
-import { sendEmailVerification } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import 'bootstrap/dist/css/bootstrap.min.css';
