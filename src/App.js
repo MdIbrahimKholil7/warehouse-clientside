@@ -1,9 +1,10 @@
 import './App.css';
-
+import React, { Suspense } from 'react';
+import loading from './img/loading.gif'
 import 'react-toastify/dist/ReactToastify.css';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/Shared/Header/Header';
-import Home from './components/Home/Home/Home';
+// import Home from './components/Home/Home/Home';
 import Footer from './components/Shared/Footer/Footer';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import MangeItems from './components/MangeItems/MangeItems';
@@ -17,14 +18,19 @@ import Blog from './components/Blog/Blog';
 import TopScroll from './components/TopScroll/TopScroll';
 import About from './components/About/About';
 import NotFound from './components/Shared/NotFound/NotFound';
-
 function App() {
+  const Home = React.lazy(() => import('./components/Home/Home/Home'))
   return (
     <div className="App">
       <Header/>
       <TopScroll/>
      <Routes>
-       <Route path='/' element={<Home/>}/>
+       <Route path='/' element={
+       <Suspense fallback={<div>
+        <img className='loading' src={loading} alt='loading'/>
+       </div>}>
+        <Home/>
+       </Suspense>}/>
        <Route path='/about' element={<About/>}/>
        <Route path='/blog' element={<Blog/>}/>
        <Route path='/productDetails/:id' element={<RequireAuth><ProductDetails/></RequireAuth>}/>

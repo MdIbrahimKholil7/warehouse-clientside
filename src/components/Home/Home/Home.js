@@ -10,13 +10,13 @@ import Team from '../Team/Team';
 const Home = () => {
     return (
         <div>
-            <PageTitle title='Home'/>
-           <Banner/>
-           <Explore/>
-           <Service/>
-           <Team/>
-           <Contact/>
-           <TopScroll/>
+            <PageTitle title='Home' />
+            <Banner />
+            <Explore />
+            <Service />
+            <Team />
+            <Contact />
+            <TopScroll />
         </div>
     );
 };

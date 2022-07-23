@@ -27,6 +27,7 @@ const Login = () => {
     const navigate = useNavigate()
     const from = location?.state?.from?.pathname || '/'
     const [signInWithEmailAndPassword, loginUser, loading, loginError] = useSignInWithEmailAndPassword(auth)
+    // for firebase error validation 
     useEffect(() => {
         if (loginError) {
             switch (loginError?.code) {
